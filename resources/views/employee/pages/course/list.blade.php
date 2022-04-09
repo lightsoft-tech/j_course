@@ -56,7 +56,13 @@
                                 <div class="col-md-6">
                                     <button type="reset" class="btn btn-light btn-active-light-primary me-2 w-100">Selengkapnya</button>
                                 </div>
-                                @foreach ($getEnroll as $itemEnroll)
+                                <div class="col-md-6">
+                                    <form action="{{url('/back-employee/enroll/enroll-course')}}/{{$item->id}}" method="POST" class="inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary w-100">Enroll</button>
+                                    </form>
+                                </div>
+                                {{-- @foreach ($getEnroll as $itemEnroll)
                                     @if ($itemEnroll->course_id != $item->id)
                                     <div class="col-md-6">
                                         <form action="{{url('/back-employee/enroll/enroll-course')}}/{{$item->id}}" method="POST" class="inline">
@@ -65,7 +71,7 @@
                                         </form>
                                     </div>
                                     @endif
-                                @endforeach
+                                @endforeach --}}
                             </div>
                         </div>
                     </div>

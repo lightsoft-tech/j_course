@@ -55,7 +55,7 @@
                             <div class="col-lg-8">
                                 <div class="row">
                                     <div class="col-lg-6 fv-row">
-                                        <input type="text" name="first_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('first_name') is-invalid @enderror" placeholder="Nama Depan" />
+                                        <input type="text" name="first_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 @error('first_name') is-invalid @enderror" placeholder="Nama Depan" value="{{old('first_name')}}" />
                                         @error('first_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>
@@ -63,7 +63,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-6 fv-row">
-                                        <input type="text" name="last_name" class="form-control form-control-lg form-control-solid @error('last_name') is-invalid @enderror" placeholder="Last name"/>
+                                        <input type="text" name="last_name" class="form-control form-control-lg form-control-solid @error('last_name') is-invalid @enderror" placeholder="Last name" value="{{old('last_name')}}"/>
                                         @error('last_name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>
@@ -76,7 +76,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="email" class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror" placeholder="email@mail.com"/>
+                                <input type="email" name="email" class="form-control form-control-lg form-control-solid @error('email') is-invalid @enderror" placeholder="email@mail.com" value="{{old('email')}}" />
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>
@@ -98,7 +98,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Nomor Telepon</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="phone_number" class="form-control form-control-lg form-control-solid @error('phone_number') is-invalid @enderror" placeholder="082345678910"/>
+                                <input type="text" name="phone_number" class="form-control form-control-lg form-control-solid @error('phone_number') is-invalid @enderror" placeholder="082345678910" value="{{old('phone_number')}}"/>
                                 @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>
@@ -109,7 +109,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Tentang Karyawan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="about_me" class="form-control form-control-lg form-control-solid @error('about_me') is-invalid @enderror" placeholder="Lorem ipsum dolor"/>
+                                <input type="text" name="about_me" class="form-control form-control-lg form-control-solid @error('about_me') is-invalid @enderror" placeholder="Lorem ipsum dolor" value="{{old('about_me')}}"/>
                                 @error('about_me')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>
@@ -118,18 +118,8 @@
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Jabatan</label>
-                            <div class="col-lg-8 fv-row">
-                                <select name="position" aria-label="Select a Timezone" data-control="select2" class="form-select form-select-solid form-select-lg">
-                                    @foreach ($getPosition as $item)
-                                    <option value="{{$item->id}}">{{$item->position_name}} - {{$item->division_name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-bold fs-6">
-                                <span class="required">Status Karyawan</span>
+                                <span class="required">Status Mentor</span>
                             </label>
                             <div class="col-lg-8 fv-row">
                                 <select name="status_user" aria-label="Select a Country" data-control="select2" class="form-select form-select-solid form-select-lg fw-bold">\

@@ -19,7 +19,7 @@ class CreateUserEmployeesTable extends Migration
             $table->text('avatar')->nullable();
             $table->string('phone_number', 20);
             $table->text('about_me')->nullable();
-            $table->integer('position_id');
+            $table->integer('position_id')->nullable();
             $table->enum('status_user', ['active', 'deactive']);
             $table->timestamps();
 

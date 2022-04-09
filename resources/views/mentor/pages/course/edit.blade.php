@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Thumbnail Video</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Link Video</label>
                             <div class="col-lg-8 fv-row">
                                 <input type="text" name="thumbnail_video" class="form-control form-control-lg form-control-solid @error('thumbnail_video') is-invalid @enderror" placeholder="https://youtu.be/ojZ032F58f8" value="{{old('thumbnail_video', $getCourseDetail->thumbnail_video)}}"/>
                                 @error('thumbnail_video')

@@ -103,7 +103,7 @@ class AdminDivisionPositionController extends Controller
                 'position_name.min' => 'Minimal panjang karakter 4.',
             ],
             [
-                'position_name' => 'Nama Divisi',
+                'position_name' => 'Nama Jabatan',
             ],
         );
         try {

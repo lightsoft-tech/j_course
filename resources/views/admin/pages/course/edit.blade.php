@@ -8,7 +8,7 @@
 <div class="toolbar" id="kt_toolbar">
     <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
         <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-            <h1 class="d-flex text-dark fw-bolder fs-5 align-items-center my-1"><span class="text-muted fw-normal">Beranda - Master Data - Course - </span>&nbsp;Tambah Data Course</h1>
+            <h1 class="d-flex text-dark fw-bolder fs-5 align-items-center my-1"><span class="text-muted fw-normal">Beranda - Master Data - Course - </span>&nbsp;Edit Data Course</h1>
         </div>
         <div class="d-flex align-items-center gap-2 gap-lg-3">
             <a href="{{url('/back-admin/course/list-course')}}" class="btn btn-sm btn-primary">Lihat Data</a>
@@ -23,7 +23,7 @@
         <div class="card mb-5 mb-xl-10">
             <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Tambah Data Course</h3>
+                    <h3 class="fw-bolder m-0">Edit Data Course</h3>
                 </div>
             </div>
             <div id="kt_account_settings_profile_details" class="collapse show">
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Thumbnail Video</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Link Video</label>
                             <div class="col-lg-8 fv-row">
                                 <input type="text" name="thumbnail_video" class="form-control form-control-lg form-control-solid @error('thumbnail_video') is-invalid @enderror" placeholder="https://youtu.be/ojZ032F58f8" value="{{old('thumbnail_video', $getCourseDetail->thumbnail_video)}}"/>
                                 @error('thumbnail_video')

@@ -42,10 +42,8 @@ class AdminUserController extends Controller
         try {
             $dataMentor = User::whereHas('roles', function($thisRole){
                 $thisRole->where('name', 'Mentor');
-            })->select('users.*', 'users.id as userID', 'user_employees.*', 'positions.*', 'divisions.*')
+            })->select('users.*', 'users.id as userID', 'user_employees.*')
             ->join('user_employees', 'users.id', 'user_employees.user_id')
-            ->join('positions', 'user_employees.position_id', 'positions.id')
-            ->join('divisions', 'positions.division_id', 'divisions.id')
             ->get();
 
             $this->param['getMentor'] = $dataMentor; 
@@ -92,14 +90,14 @@ class AdminUserController extends Controller
     {
         $this->validate($request, 
             [
-                'first_name' => 'required|min:4',
+                'first_name' => 'required|min:1',
                 'email' => 'required|min:4|email',
                 'password' => 'required|min:4',
                 'phone_number' => 'required|min:9',
             ],
             [
                 'required' => ':attribute harus diisi.',
-                'first_name.min' => 'Minimal panjang karakter 4.',
+                'first_name.min' => 'Minimal panjang karakter 1.',
                 'email.email' => 'Format email tidak benar.',
                 'email.min' => 'Minimal panjang karakter 4.',
                 'password.min' => 'Minimal panjang karakter 4.',
@@ -152,14 +150,14 @@ class AdminUserController extends Controller
     {
         $this->validate($request, 
             [
-                'first_name' => 'required|min:4',
+                'first_name' => 'required|min:1',
                 'email' => 'required|min:4|email',
                 'password' => 'required|min:4',
                 'phone_number' => 'required|min:9',
             ],
             [
                 'required' => ':attribute harus diisi.',
-                'first_name.min' => 'Minimal panjang karakter 4.',
+                'first_name.min' => 'Minimal panjang karakter 1.',
                 'email.email' => 'Format email tidak benar.',
                 'email.min' => 'Minimal panjang karakter 4.',
                 'password.min' => 'Minimal panjang karakter 4.',
@@ -196,7 +194,6 @@ class AdminUserController extends Controller
             
             $mentorDetail->phone_number = $request->phone_number;
             $mentorDetail->about_me = $request->about_me;
-            $mentorDetail->position_id = $request->position;
             $mentorDetail->status_user = $request->status_user;
             $mentorDetail->save();
             

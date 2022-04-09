@@ -29,7 +29,7 @@
                         <div class="fs-6 fw-bold mt-2 mb-3">Nama Kategori</div>
                     </div>
                     <div class="col-xl-9 fv-row">
-                        <input type="text" class="form-control form-control-solid @error('category_name') is-invalid @enderror" name="category_name" placeholder="Nama Divisi ..." value="{{old('category_name', $getDetailcCategory->category_name)}}" />
+                        <input type="text" class="form-control form-control-solid @error('category_name') is-invalid @enderror" name="category_name" placeholder="Nama Kategori ..." value="{{old('category_name', $getDetailcCategory->category_name)}}" />
                         @error('category_name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>&nbsp; &nbsp; &nbsp;{{ $message }}</strong>

@@ -81,8 +81,12 @@
                         <td class="text-center">
                             <span class="fw-bolder">{{ \Illuminate\Support\Str::limit($item->description, 25, $end='...') }}</span>
                         </td>
-                        <td class="text-center min-w-100px">{{$item->thumbnail_image}}</td>
-                        <td class="text-center min-w-100px">{{$item->thumbnail_video}}</td>
+                        <td class="text-center min-w-100px">
+                            <span class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-60px" style="background-image:url('{{asset('image/upload/course/thumbnail')}}/{{$item->thumbnail_image}}')">
+
+                            </span>
+                        </td>
+                        <td class="text-center min-w-100px">{{ \Illuminate\Support\Str::limit($item->thumbnail_video, 15, $end='...') }}</td>
                         <td class="text-center" data-order="{{$item->category_name}}">{{$item->category_name}}</td>
                         <td class="text-center min-w-100px">{{$item->created_at}}</td>
                         <td class="text-center min-w-100px">{{$item->updated_at}}</td>

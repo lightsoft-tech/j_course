@@ -58,8 +58,6 @@
                         <th class="text-center">Foto Profil</th>
                         <th class="text-center">Tentang Karyawan</th>
                         <th class="text-center">Status</th>
-                        <th class="text-center">Divisi</th>
-                        <th class="text-center">Jabatan</th>
                         <th class="text-center">Opsi</th>
                     </tr>
                 </thead>
@@ -80,13 +78,14 @@
                         <td class="text-center">
                             <span class="fw-bolder">{{$item->email}}</span>
                         </td>
-                        <td class="text-center min-w-100px">{{$item->avatar}}</td>
+                        <td class="text-center min-w-100px">
+                            <span class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-60px" style="background-image:url('{{asset('image/upload/avatar-user')}}/{{$item->avatar}}')">
+                            </span>
+                        </td>
                         <td class="text-center min-w-100px">{{ \Illuminate\Support\Str::limit($item->about_me, 25, $end='...') }}</td>
                         <td class="text-center" data-order="{{$item->status_user}}">
                             <div class="badge @if ($item->status_user == 'active') badge-light-success @else badge-light-warning @endif ">{{$item->status_user}}</div>
                         </td>
-                        <td class="text-center min-w-100px">{{$item->division_name}}</td>
-                        <td class="text-center min-w-100px">{{$item->position_name}}</td>
                         <td class="text-center">
                             <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Aksi
                                 <span class="svg-icon svg-icon-5 m-0">
